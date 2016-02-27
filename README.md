@@ -8,3 +8,5 @@
 Ну и собственно сам скрипт генерирующий форму для отправки на сервер liqpay
 
 Для более подробной иснструкции к подключению читайте статью по данному модулю - http://polyakov.co.ua/page/pishem-modul-oplatyi-tovara-s-pomoschyu-liqpay-v-modalnom-okne
+
+<img src="http://polyakov.co.ua/assets/blog/php/liqpay/1.png" />
