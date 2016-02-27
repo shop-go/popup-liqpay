@@ -22,7 +22,7 @@ if(!empty($_POST['send'])) {
 	
 	$theme = "Заявка Z".$Nzakaz;
 
-	mail("zhenya_polyakov@mail.ru", $theme, $mess, "From: info@polyakov.co.ua <info@polyakov.co.ua>\nContent-Type: text/html;\n charset=utf-8\nX-Priority: 0");
+	mail("mymail@mail.ru", $theme, $mess, "From: from@mail.ru <from@mail.ru>\nContent-Type: text/html;\n charset=utf-8\nX-Priority: 0");
 	
 	echo "<h3>Заявка удачно оформлена.</h3>";
 	echo "<p>Заявке присвоен номер Z".$Nzakaz.". <br/>Наш менеджер свяжется с вами в ближайшее время.</p>";
@@ -34,9 +34,9 @@ else {
 }
 if(!empty($_POST['send']) && $_POST['order_payment'] == 1) {
     //указываем публичный ключ liqpay
-    $public_key = 'i81017420316';
+    $public_key = '';
     //указываем приватный ключ liqpay
-    $private_key = 'xxu5HrKn0ZqwAjUo0Apmk5ALKwrJ5UGiUhP0BHAq';
+    $private_key = '';
     //подключаем библиотеку liqpay
     require("./LiqPay.php");
     //создаем обьект класса LiqPay
@@ -51,8 +51,8 @@ if(!empty($_POST['send']) && $_POST['order_payment'] == 1) {
         'order_id'      => $Nzakaz,
         'language'		=> 'ru',
         'type'			=> 'donate',
-        'result_url'	=> 'http://lessons.polyakov.co.ua/popup-liqpay/payment/success_payment.php',
-        'server_url'	=> 'http://lessons.polyakov.co.ua/popup-liqpay/payment/success_payment.php',
+        'result_url'	=> 'http://your-site/payment/success_payment.php',
+        'server_url'	=> 'http://your-site/payment/success_payment.php',
         'sandbox'		=> 1
     ));
     echo $data['form'];
